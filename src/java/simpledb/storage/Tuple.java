@@ -75,7 +75,9 @@ public class Tuple implements Serializable {
      */
     public void setField(int i, Field f) {
         // some code goes here
-        this.fields[i] = f;
+        if(i < this.fields.length){
+            this.fields[i] = f;
+        }
 
     }
 
@@ -87,7 +89,10 @@ public class Tuple implements Serializable {
      */
     public Field getField(int i) {
         // some code goes here
-        return this.fields[i];
+        if(i < this.fields.length){
+            return this.fields[i];
+        }
+        return null;
     }
 
     /**
