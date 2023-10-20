@@ -31,6 +31,7 @@ public class Tuple implements Serializable {
         //assert td.num_fields() >= 1;
         this.td = td;
         this.fields = new Field[td.getSize()];
+        //assert td.equals(this.td) : "nope";
 
 
 

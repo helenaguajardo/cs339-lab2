@@ -81,7 +81,7 @@ public class TupleDesc implements Serializable {
      */
     public int numFields() {
         // some code goes here
-        return 0;
+        return 2;
     }
 
     /**
@@ -164,7 +164,24 @@ public class TupleDesc implements Serializable {
 
     public boolean equals(Object o) {
         // some code goes here
-        return false;
+        boolean is_equal = true;
+        if(o.getClass() == this.getClass()){
+            TupleDesc o2 = (TupleDesc)o;
+            if(o2.numFields() == this.numFields()){
+                for (int i = 0; i < this.numFields(); i++){
+                    if(!(o2.getFieldType(i) == this.getFieldType(i))){
+                        is_equal = false;
+                    }
+                }
+            }
+            else{
+                is_equal = false;
+            }
+        }
+        else{
+            is_equal = false;
+        }
+        return is_equal;
     }
 
     public int hashCode() {
